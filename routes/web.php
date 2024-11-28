@@ -15,11 +15,11 @@ Route::get('/', function () {
 Route::prefix('admin')->name('admin.')->group(function(){
 
     Route::middleware([GuestAdminMiddleware::class])->group(function(){
-        Route::get('/login', [AdminLoginController::class,'index']);
+       Route::get('/login', [AdminLoginController::class,'index']);
         // Corrected here
         Route::post('/login', [AdminLoginController::class,'login'])->name('login');
     });
-   
+    
     Route::middleware(['auth', AdminMiddleware::class])->group(function(){
         Route::get('/home', [AdminHomeController::class, 'index'])->name('home');
     });
