@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKGAMING</title>
+    <link rel="stylesheet" href="styles/trangchu.css">
+</head>
+
+<body>
+ <!-- HEADER -->
+ <header>
+    <img src="images/logo1.png" alt="" width=70px>
+    <nav class="navigation">
+        <a href="#">Trang chủ</a>
+        <a href="#">Sản phẩm</a>
+        <a href="#">Blog</a>
+        <a href="#">Liên hệ</a>
+        <a href="spin.html">SPIN</a>
+        <a href="thanhtoan.html" target="_blank">Nạp thẻ</a>
+        <button><a href="login.php">Đăng nhập</a></button>
+    </nav>
+</header>
+<div class="sale-banner">
+    <div class="banner-content">
+        <h2>Khuyến mãi cực hot!</h2>
+        <p>Giảm giá lên đến 50% cho các tài khoản game VIP. Đừng bỏ lỡ cơ hội này!</p>
+        
+        <a href="thanhtoan.html" class="cta-btn">Mua ngay</a>
+    </div>
+</div>
+
+</div>
+<!-------------------------------------------------------PRODUCT---------------------------------------------------------------------------------------->
+<div id="wp-products">
+    <h2>SẢN PHẨM CỦA CHÚNG TÔI</h2>
+    
+    <!-- Bộ lọc -->
+    <div class="filter-bar">
+        <div class="filter-item">
+            <label for="min-price">Giá tối thiểu</label>
+            <input type="number" id="min-price" placeholder="Giá tối thiểu" />
+        </div>
+        <div class="filter-item">
+            <label for="max-price">Giá tối đa</label>
+            <input type="number" id="max-price" placeholder="Giá tối đa" />
+        </div>
+        <div class="filter-item">
+            <label for="skin-filter">Số tướng</label>
+            <select id="skin-filter">
+                <option value="">Tất cả</option>
+                <option value="tướng 192">Tướng 192</option>
+                <option value="tướng 165">Tướng 165</option>
+                <option value="tướng 164">Tướng 164</option>
+                <option value="tướng 192">Tướng 1665</option>
+                <!-- Bạn có thể thêm các loại skin khác ở đây -->
+            </select>
+        </div>
+        <button onclick="applyFilters()">Áp dụng bộ lọc</button>
+    </div>
+
+    <!-- Thanh tìm kiếm -->
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Nhập ID acc game...">
+        <button onclick="searchProduct()">Tìm</button>
+    </div>
+
+    <!-- Danh sách sản phẩm -->
+    <ul id="list-products">
+        <div class="item" data-id="550992" data-price="2000000" data-skin="tướng 192">
+            <img src="images/hinhb1.png" alt="">
+            <div class="name">ID 550992</div>
+            <div class="desc">Tướng: 192 Trang phục: 356</div>
+            <div class="price">2.000.000 VNĐ</div>
+            <div class="box-mid">
+                <!-- Sử dụng thẻ <a> với các tham số URL -->
+                <a href="thanhtoan.html?id=550991&price=4000000&skin=tướng%20165">
+                    <input>Mua ngay
+                </a>
+            </div>
+        </div>
+        
+        <div class="item" data-id="550991" data-price="4000000" data-skin="tướng 165">
+            <img src="images/hinhb2.png" alt="">
+            <div class="name">ID 550991</div>
+            <div class="desc">Tướng: 165 Trang phục: 980</div>
+            <div class="price">4.000.000 VNĐ</div>
+            <div class="box-mid">
+                <!-- Sử dụng thẻ <a> với các tham số URL -->
+                <a href="thanhtoan.html?id=550991&price=4000000&skin=tướng%20165">
+                    <button>Mua ngay</button>
+                </a>
+            </div>
+        </div>
+        
+        <div class="item" data-id="550990" data-price="1000000" data-skin="tướng 164">
+            <img src="images/hinhb3.png" alt="">
+            <div class="name">ID 550990</div>
+            <div class="desc">Tướng: 164 Trang phục: 178</div>
+            <div class="price">1.000.000 VNĐ</div>
+            <div class="box-mid">
+                <!-- Sử dụng thẻ <a> với các tham số URL -->
+                <a href="thanhtoan.html?id=550991&price=4000000&skin=tướng%20165">
+                    <button>Mua ngay</button>
+                </a>
+            </div>
+        </div>
+        <div class="item" data-id="550000" data-price="500000" data-skin="tướng 169">
+            <img src="images/hinhb2.png" alt="">
+            <div class="name">ID 55000</div>
+            <div class="desc">Tướng: 169 Trang phục: 1100</div>
+            <div class="price">5.000.000 VNĐ</div>
+            <div class="box-mid">
+                <!-- Sử dụng thẻ <a> với các tham số URL -->
+                <a href="thanhtoan.html?id=550991&price=4000000&skin=tướng%20165">
+                    <button>Mua ngay</button>
+                </a>
+            </div>
+        </div>
+        <div class="item" data-id="550001" data-price="100000" data-skin="tướng 65">
+            <img src="images/hinhb3.png" alt="">
+            <div class="name">ID 550991</div>
+            <div class="desc">Tướng: 65 Trang phục: 80</div>
+            <div class="price">700.000 VNĐ</div>
+            <div class="box-mid">
+                <!-- Sử dụng thẻ <a> với các tham số URL -->
+                <a href="thanhtoan.html?id=550991&price=4000000&skin=tướng%20165">
+                    <button>Mua ngay</button>
+                </a>
+            </div>
+        </div>
+        <div class="item" data-id="550010" data-price="9000000" data-skin="tướng 1665">
+            <img src="images/hinhb1.png" alt="">
+            <div class="name">ID 550010</div>
+            <div class="desc">Tướng: 1665 Trang phục: 2000</div>
+            <div class="price">9.000.000 VNĐ</div>
+            <div class="box-mid">
+                <!-- Sử dụng thẻ <a> với các tham số URL -->
+                <a href="thanhtoan.html?id=550991&price=4000000&skin=tướng%20165">
+                    <button>Mua ngay</button>
+                </a>
+            </div>
+        </div>
+    </ul>
+</div>
+
+<!-- Footer -->
+<div id="footer">
+    <!-- Left Section: Logo and Contact Info -->
+    <div class="footer-left">
+        <div class="logo">
+            <img src="images/logo1.png" alt="Logo">
+        </div>
+        <p>Cung cấp sản phẩm với chất lượng an toàn cho quý khách</p>
+        <div class="contact-info">
+            <p><strong>Liên hệ với chúng tôi:</strong></p>
+            <p>Email: <a href="mailto:nk10052003@gmail.com">nk10052003@gmail.com</a></p>
+        </div>
+    </div>
+
+    <!-- Right Section: Scrolling Comments -->
+    <div class="footer-right">
+        <div class="scrolling-comments">
+            <div class="comments">
+                <p>acc tốt | acc rẻ | acc giá rẻ | chất lượng tuyệt vời | dịch vụ nhanh chóng</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+<script src="scripts/trangchu.js"></script>
+<script src="scripts/search.js"></script>
+<script>
+    // Hàm áp dụng bộ lọc
+    function applyFilters() {
+        const minPrice = parseFloat(document.getElementById('min-price').value) || 0;
+        const maxPrice = parseFloat(document.getElementById('max-price').value) || Infinity;
+        const skinFilter = document.getElementById('skin-filter').value.toLowerCase();
+        const products = document.querySelectorAll('#list-products .item');
+        let found = false;
+
+        products.forEach(product => {
+            const productPrice = parseFloat(product.getAttribute('data-price'));
+            const productSkin = product.getAttribute('data-skin').toLowerCase();
+
+            // Lọc theo giá
+            const priceMatch = productPrice >= minPrice && productPrice <= maxPrice;
+
+            // Lọc theo skin
+            const skinMatch = skinFilter === "" || productSkin.includes(skinFilter);
+
+            // Hiển thị sản phẩm nếu thỏa mãn cả 2 điều kiện
+            if (priceMatch && skinMatch) {
+                product.style.display = 'block';
+                found = true;
+            } else {
+                product.style.display = 'none';
+            }
+        });
+
+        if (!found) {
+            alert('Không tìm thấy sản phẩm khớp với bộ lọc.');
+        }
+    }
+
+    // Hàm tìm kiếm theo ID
+    function searchProduct() {
+        const input = document.getElementById('search-input').value.trim().toLowerCase();
+        const products = document.querySelectorAll('#list-products .item');
+        let found = false;
+
+        products.forEach(product => {
+            const productId = product.getAttribute('data-id').toLowerCase();
+            if (productId === input || input === "") {
+                product.style.display = 'block';
+                found = true;
+            } else {
+                product.style.display = 'none';
+            }
+        });
+
+        if (!found) {
+            alert(`Không tìm thấy sản phẩm với ID: ${input}`);
+        }
+    }
+</script>
+</body>
+</html>
