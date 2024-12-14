@@ -25,7 +25,7 @@
 
       <div class="row justify-content-center mt-4">
         <div class="col-md-6 d-flex justify-content-end">
-          <a href="{{route('admin.products')}}" class="btn btn-danger">Back</a>
+          <a href="{{route('admin.products.index')}}" class="btn btn-danger">Back</a>
         </div>
       </div>
 

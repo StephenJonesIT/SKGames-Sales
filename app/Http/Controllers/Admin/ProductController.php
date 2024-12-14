@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Validator;
 class ProductController extends Controller
 {
     public function index(){
-        $products = Product::orderBy('created_at','DESC')->get();
+        $products = Product::orderBy('created_at','DESC')->paginate(5);
         return view('admin.products.index',[
             'products'=>$products
         ]);
@@ -57,14 +57,14 @@ class ProductController extends Controller
             $imageName = time().'.'.$ext;
 
             //save image to products directory
-            $image->move(public_path('uploads/products'),$imageName);
+            $image->move(public_path('/uploads/products'),$imageName);
         
             //save image name in database
             $product->image = $imageName;
             $product->save();
         }
         
-        return redirect()->route('admin.products')->with('success','Product added successfully.');
+        return redirect()->route('admin.products.index')->with('success','Product added successfully.');
     }
 
     public function edit($id){
@@ -110,7 +110,7 @@ class ProductController extends Controller
 
         if($request->image != ""){
             // delete old image
-            File::delete(public_path('uploads/products'.$product->image));
+            File::delete(public_path('/uploads/products/'.$product->image));
 
 
             $image = $request->image;
@@ -118,23 +118,23 @@ class ProductController extends Controller
             $imageName = time().'.'.$ext;
 
             //save image to products directory
-            $image->move(public_path('uploads/products'),$imageName);
+            $image->move(public_path('/uploads/products'),$imageName);
         
             //save image name in database
             $product->image = $imageName;
             $product->save();
         }
         
-        return redirect()->route('admin.products')->with('success','Product updated successfully.');
+        return redirect()->route('admin.products.index')->with('success','Product updated successfully.');
     }
 
     public function destroy($id){
         $product = Product::findOrFail($id);
 
-        File::delete(public_path('uploads/products'.$product->image));
+        File::delete(public_path('/uploads/products/'.$product->image));
 
         $product->delete();
 
-        return redirect()->route('admin.products')->with('success','Product deleted successfully.');
+        return redirect()->route('admin.products.index')->with('success','Product deleted successfully.');
     }
 }

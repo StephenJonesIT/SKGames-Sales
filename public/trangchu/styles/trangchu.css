@@ -93,10 +93,9 @@ header .navigation {
 
 
 /* ------------------------- PRODUCT --------------------------------------*/
-#list-products .box-mid button {
-    width: 191px;
-    height: 40px;
+.custom-btn {
     background: #1d1a1a;
+    text-align: center;
     border: none;
     outline: none;
     color: #fff;
@@ -106,30 +105,12 @@ header .navigation {
     margin: 20px;
 }
 
-#list-products .box-mid button:hover {
+.custom-btn:hover {
     background: #ff9800; /* Brighter orange */
 }
 
-#wp-products {
-    padding: 116px 134px 78px;
-}
 
-#wp-products h2 {
-    text-align: center;
-    margin-bottom: 76px;
-    font-size: 32px;
-    color: #626a67;
-}
-
-#list-products {
-    display: flex;
-    list-style: none;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px; /* Adding some gap between items */
-}
-
-#list-products .item {
+.item {
     width: 290px;
     height: 374px;
     background: #f1f1f1; /* Lighter background */
@@ -138,22 +119,22 @@ header .navigation {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 10px;
 }
-
-#list-products .item img {
+.item:hover { transform: scale(1.05); /* Phóng to 5% khi hover */ }
+.item img {
     width: 100%;
     height: auto;
     display: block;
     margin: 0 auto 10px;
 }
 
-#list-products .item .name {
+.item .name {
     text-align: center;
     color: #333;
     font-weight: bold;
     margin-top: 10px;
 }
 
-#list-products .item .price {
+.item .price {
     text-align: center;
     color: #f44336; /* Red for price */
     font-weight: bold;
@@ -451,6 +432,7 @@ body {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Bóng mờ ấn tượng */
     text-align: center;
     margin-bottom: 30px;
+    margin-top: 50px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 

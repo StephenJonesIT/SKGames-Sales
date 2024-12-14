@@ -64,12 +64,12 @@
                   <td>{{$item->name}}</td>
                   <td>
                     @if ($item->image != "")
-                        <img width="40" src="{{asset('uploads/products/'.$item->image)}}" alt="">
+                        <img width="50" src="{{asset('uploads/products/'.$item->image)}}" alt="">
                     @endif
                   </td>
                   <td>{{$item->skin}}</td>
                   <td>{{$item->hero}}</td>
-                  <td>{{$item->price}}</td>
+                  <td>{{number_format($item->price, 0, ',', '.')}}</td>
                   <td>{{$item->username}}</td>
                   <td>{{$item->password}}</td>
                   <td>{{\Carbon\Carbon::parse($item->created_at)->format('d M, Y')}}</td>
@@ -84,8 +84,9 @@
                 </tr>
                 @endforeach
                 @endif
-              </table>
+              </table>   
             </div>
+            <div class="d-flex justify-content-center"> {{ $products->links() }} </div>
           </div>
         </div>
       </div>
