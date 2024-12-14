@@ -15,6 +15,7 @@
                         @if ($product->image != "")
                         <img class="card-img" src="{{ asset('/uploads/products/' . $product->image) }}" alt="">
                         @endif
+            
                     </div>
                     <div class="col-md-6 d-flex flex-column">
                         <div class="card-body">
