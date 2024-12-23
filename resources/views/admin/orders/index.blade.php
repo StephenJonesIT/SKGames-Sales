@@ -5,12 +5,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">Users</h1>
+          <h1 class="m-0">Orders</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{route('admin.dashbroad')}}">Home</a></li>
-            <li class="breadcrumb-item active">Users</li>
+            <li class="breadcrumb-item active">Orders</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -20,11 +20,6 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid ">
-          <div class="row justify-content-center mt-4">
-            <div class="col-md-10 d-flex justify-content-end">
-              <a href="{{route('admin.users.create')}}" class="btn btn-primary">Create</a>
-            </div>
-          </div>
     
           <div class="row justify-content-center">
             @if (Session::has('success'))
@@ -40,44 +35,46 @@
               <div class="card card-dark">
     
                 <div class="card-header">
-                  <h3 class="card-title w-100">List User</h3>
+                  <h3 class="card-title w-100">List Order</h3>
                 </div>
                 <div class="card-body">
                   <table class="table">
                     <tr>
-                      <th>ID</th>
+                      <th>ID Order</th>
                       <th>Full Name</th>
                       <th>Email</th>
-                      <th>Type</th>
+                      <th>ID Product</th>
+                      <th>Price</th>
+                      <th>Status</th>
                       <th>Created at</th>
                       <th>Action</th>
-                    </tr>
-                    @if ($users->isNotEmpty())
-                        @foreach ($users as $item)
+                    </tr> 
+                    @if ($orders->isNotEmpty())
+                        @foreach ($orders as $item)
                             <tr>
-                              <td>{{$item->id}}</td>
-                              <td>{{$item->name}}</td>
-                              <td>{{$item->email}}</td>
-                              <td>{{$item->auth_provider}}</td>
-                              <td>{{\Carbon\Carbon::parse($item->created_at)->format('d M, Y')}}</td>
-                              <td>
-                                <a href="{{route('admin.users.edit',$item->id)}}" class="btn btn-warning">Edit</a>
-                                <a href="#" onclick="deleteUser({{$item->id}});" class="btn btn-danger">Delete</a>
-                                <form id="delete-user-from-{{$item->id}}" action="{{route('admin.users.destroy',$item->id)}}" method="POST">
-                                  @csrf
-                                  @method('delete')
-                                </form>
-                              </td>
+                                <td>{{$item->id}}</td>
+                                <td>{{$item->user_name}}</td>
+                                <td>{{$item->user_email}}</td>
+                                <td>{{$item->product_name}}</td>
+                                <td>{{$item->total_price}}</td>
+                                <td>{{$item->status}}</td>
+                                <td>{{\Carbon\Carbon::parse($item->created_at)->format('Y-m-d')}}</td>
+                                <td>
+                                    @if ($item->status=="Chờ thanh toán")
+                                    <a href="{{route('admin.order.edit',$item->id)}}" class="btn btn-primary">Edit</a>
+                                    @endif    
+                                </td>
                             </tr>
                         @endforeach
-                    @endif 
+                    @endif
                   </table>   
                 </div>
-                <div class="d-flex justify-content-center"> {{ $users->links() }} </div>
+                <div class="d-flex justify-content-center"> {{ $orders->links() }} </div>
               </div>
             </div>
           </div>
           <!-- /.row -->
         </div><!-- /.container-fluid -->
       </section>
+
 @endsection

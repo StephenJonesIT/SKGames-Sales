@@ -3,6 +3,6 @@
         <h2>Khuyến mãi cực hot!</h2>
         <p>Giảm giá lên đến 50% cho các tài khoản game VIP. Đừng bỏ lỡ cơ hội này!</p>
         
-        <a href="thanhtoan.html" class="cta-btn">Mua ngay</a>
+        <a href="{{ route('products_list') }}" class="cta-btn">Mua ngay</a>
     </div>
 </div>

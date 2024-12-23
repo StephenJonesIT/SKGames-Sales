@@ -9,19 +9,16 @@
               <a class="nav-link" href="{{route('index')}}">Trang chủ<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#">Sản phẩm</a>
+              <a class="nav-link" href="{{ route('products_list') }}">Sản phẩm</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#">Blog</a>
+              <a class="nav-link" href="https://skgamesales.blogspot.com/">Blog</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#">Liên hệ</a>
+              <a class="nav-link" href="https://www.facebook.com/stephen.jones.TranThanhSang?mibextid=ZbWKwL">Liên hệ</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#">SPIN</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="{{ route('login.page') }}">Nạp thẻ</a>
+              <a class="nav-link" href="{{ route('home.orderhistory') }}">Lịch sử</a>
           </li>
           <li class="nav-item">
               <a class="nav-link btn btn-danger text-white" href="{{ route('logout') }}">Đăng xuất</a>

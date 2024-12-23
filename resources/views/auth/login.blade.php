@@ -54,7 +54,7 @@
                         </div>
                         <div class="row mb-4">
                             <div class="col-12">
-                                <button type="submit" class="btn btn-danger w-100">Đăng Nhập</button>
+                                <button type="submit" class="btn btn-primary w-100">Đăng Nhập</button>
                             </div>
                         </div>
                     </form>
@@ -64,7 +64,7 @@
                     </div>
                     <div class="row mb-4">
                         <div class="col-12">
-                            <a href="{{route('register')}}" class="btn btn-primary w-100 mb-2">
+                            <a href="{{route('register')}}" class="btn btn-success w-100 mb-2">
                                  Đăng Ký Ngay
                             </a>
                         </div>
@@ -74,14 +74,12 @@
                         <p>HOẶC ĐĂNG NHẬP QUA</p>                        
                     </div>
                     <div class="row mb-4 justify-content-center">
-                        <div class="col-4">
-                            <a href="{{route('auth.redirection','facebook')}}" class="btn btn-info w-100 mb-2">
-                                <i class="fab fa-facebook mr-2"></i> Facebook
-                            </a>
+                        <div class="col-4"> <a href="{{route('auth.redirection','facebook')}}" class="btn btn-facebook w-100 mb-2"> 
+                            <i class="fab fa-facebook mr-2"></i> Facebook </a> 
                         </div>
                         <div class="col-4">
                             <a href="{{route('auth.redirection','google')}}" class="btn btn-danger w-100">
-                                <i class="fab fa-google-plus mr-2"></i> Google
+                                <i class="fab fa-google mr-2"></i> Google
                             </a>
                         </div>
                     </div>

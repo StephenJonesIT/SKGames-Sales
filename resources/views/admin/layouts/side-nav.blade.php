@@ -36,6 +36,15 @@
               </p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="{{route('admin.order.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-solid fa-shopping-cart"></i>
+              <p>
+                Manage Order
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

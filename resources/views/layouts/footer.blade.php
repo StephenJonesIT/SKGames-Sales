@@ -6,7 +6,7 @@
             <!-- Logo và mô tả -->
             <div class="col-md-4  justify-content-center">
                 <div class="logo">
-                    <img src="/trangchu/images/logo1.png" alt="Logo" class="img-fluid">
+                    <img src="{{ asset('/uploads/logo1.png') }}" alt="Logo" class="img-fluid">
                 </div>
                 <p>Cung cấp sản phẩm với chất lượng an toàn</p>
             </div>

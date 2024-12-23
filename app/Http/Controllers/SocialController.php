@@ -18,30 +18,38 @@ class SocialController extends Controller
         abort(404);
     }
 
-    public function googleAuthentication(){
+    public function socialAuthentication($provider){
         try {
-            $googleUser = Socialite::driver('google')->user();
+            if($provider){
+                
+            
+                $socialUser = Socialite::driver($provider)->user();
         
         
-            $user = User::where('google_id',$googleUser->id)->first();
-        
-            if($user != null){
-                Auth::login($user);
-                return redirect()->route('home');
-            }else{
-                $userData = User::create([
-                    'name'=>$googleUser->name,
-                    'email' => $googleUser->email,
-                    'password'=> Hash::make("password@123"),
-                    'google_id' => $googleUser->id,
-                ]);
+                $user = User::where('auth_provider_id',$socialUser->id)->first();
+            
+                if($user != null){
 
-                if($userData){
-                    Auth::login($userData);
-                    return redirect()->route('home');
+                    Auth::login($user);
+
+                }else{
+                    $userData = User::create([
+                        'name'=>$socialUser->name,
+                        'email' => $socialUser->email,
+                        'password'=> Hash::make("password@123"),
+                        'auth_provider_id' => $socialUser->id,
+                        'auth_provider'=>$provider,
+                    ]);
+    
+                    if($userData){
+                        
+                        Auth::login($userData);
+                        
+                    }
                 }
+                return redirect()->route('home');
             }
-          
+            abort(404); 
         } catch (Exception $e) {
             dd($e);
             return redirect('/')->with('error', 'Đăng nhập thất bại!');

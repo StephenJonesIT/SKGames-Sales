@@ -22,11 +22,13 @@
                             <h5 class="card-text">ID: <b> {{ $product->name }}</b></h5>
                                 <p class="card-text">Tướng: {{ $product->hero }} - Trang phục: {{ $product->skin }}</p>
                                 <p class="card-text text-danger"><b>Giá: {{ number_format($product->price, 0, ',', '.') }} VND</b></p>
-                                <form action="{{route('momo')}}" method="post">
+                                <form action="{{ route('momo')}}" method="POST" class="w-100">
+                                    @method('post')
                                     @csrf
+                                    <input type="hidden" name="id" value="{{$product->id}}" class="form-control">
                                     <button type="submit" class="btn btn-primary w-100">Xác nhận mua hàng</button>
                                 </form>
-                            
+                                
                         </div>
                     </div>
                 </div>

@@ -26,12 +26,12 @@
     @yield('content')
 
     <script src="{{asset('/js/trangchu.js')}}"></script>
-    <script src="{{asset('/js/search.js')}}"></script>
+    <script src="{{asset('/js/carousel.js')}}"></script>
     <script src="{{asset('/js/admin/jquery.min.js')}}"></script>
     <!-- Bootstrap 4 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/js/adminlte.min.js"></script>
-    
+        
 </body>
 </html>

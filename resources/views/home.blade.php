@@ -3,7 +3,6 @@
 @section('content')
     @include('layouts.nav-top-login')
     @include('layouts.banner')
-    @include('layouts.filter')
     
     <div class="d-flex justify-content-center mt-5">
         <h2 >SẢN PHẨM NỔI BẬT</h2>

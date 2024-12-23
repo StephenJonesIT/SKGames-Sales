@@ -55,7 +55,7 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- jQuery -->
 <script src="{{ asset('/js/admin/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -86,7 +86,7 @@
 <script src="{{ asset('/js/admin/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/js/adminlte.min.js"></script>
-
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
 <script>
@@ -100,4 +100,12 @@
       document.getElementById("delete-user-from-"+id).submit();
     }
   }
+
+  $(document).ready(function () { $('#exampleInputFile').on('change', function() { 
+    // Lấy tên tệp 
+    var fileName = $(this).val().split('\\').pop();
+    //  // Thay thế nhãn "Choose a file" 
+    $(this).next('.custom-file-label').html(fileName); 
+    }); 
+});
 </script>

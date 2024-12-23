@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Validator;
 class UserController extends Controller
 {
     public function index(){
-        $users = User::where('email', 'not like', '%admin%')->orderBy('created_at','DESC')->get();
+        $users = User::where('email', 'not like', '%admin%')->orderBy('created_at','DESC')->paginate(5);
         return view('admin.user.index',[
             'users'=>$users
         ]);

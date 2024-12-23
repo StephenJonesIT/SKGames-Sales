@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashBoardController;
 use App\Http\Controllers\Admin\LoginControler;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
@@ -33,5 +34,12 @@ Route::middleware("admin_auth:admin")->prefix('/admin/')->name('admin.')->group(
         Route::put('/users/{user}',[UserController::class,'update'])->name('update');
         Route::delete('/users/{user}',[UserController::class,'destroy'])->name('destroy');
     });
+
+    Route::name('order.')->group(function() {
+        Route::get('/orders', [OrderController::class, 'index'])->name('index');
+        Route::get('/orders/{order}/edit',[OrderController::class,'edit'])->name('edit');
+        Route::put('/orders/{order}',[OrderController::class,'update'])->name('update');
+    });
+    
 });
 

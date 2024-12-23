@@ -94,7 +94,9 @@
                   <label for="exampleInputFile">File Image</label>
                   <div class="input-group">
                     <div class="custom-file">
-                      <input type="file" class="custom-file-input" name="image" id="exampleInputFile">
+                      <input type="file" class="custom-file-input @error('image')
+                          is-invalid
+                      @enderror" name="image" id="exampleInputFile">
                       <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                     </div>
                   </div>
